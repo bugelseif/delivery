@@ -19,28 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('tipoproduto', 'App\Http\Controllers\TipoProdutoController@index');
 
-Route::get('test', function () {
-    return view('test');
-});
-
-Route::get("tipoproduto/add/{descricao}", function($descricao){
-    $tipoProduto = new TipoProduto();
-    $tipoProduto->descricao = $descricao;
-    $tipoProduto->save();
-
-    return view('welcome'); // volta pra pagina inicial
-});
-
-Route::get("produto/add/{nome}/{preco}/{Tipo_Produtos_id}/{ingredientes}/{urlImage}",
-function($nome, $preco, $Tipo_Produtos_id, $ingredientes, $urlImage){
-    $produto = new Produto();
-    $produto->nome = $nome;
-    $produto->preco = $preco;
-    $produto->Tipo_Produtos_id = $Tipo_Produtos_id;
-    $produto->ingredientes = $ingredientes;
-    $produto->urlImage = $urlImage;
-    $produto->save();
-
-    return view('welcome'); // volta pra pagina inicial
-});
+// Route::post('tipoproduto', 'App\Http\Controllers\TipoProdutoController@store');
