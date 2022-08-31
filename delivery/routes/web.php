@@ -19,6 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('tipoproduto', 'App\Http\Controllers\TipoProdutoController@index');
+Route::get('tipoproduto', "App\Http\Controllers\TipoProdutoController@index");
+Route::get('tipoproduto/create', "App\Http\Controllers\TipoProdutoController@create");
+
+
+Route::post('tipoproduto', "App\Http\Controllers\TipoProdutoController@store");
+
+
+// Comando para definir de forma automática todas as rotas criados pelo --resource
+//Route::resource('tipoproduto', "App\Http\Controllers\TipoProdutoController");
 
 // Route::post('tipoproduto', 'App\Http\Controllers\TipoProdutoController@store');

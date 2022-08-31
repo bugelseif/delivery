@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <a class="btn btn-primary" href="create">Criar Tipo Produto</a>
+        <a class="btn btn-primary" href="tipoproduto/create">Criar Tipo Produto</a>
         <a class="btn btn-primary" href="#">Voltar</a>
 
         <table class="table table-dark table-striped">

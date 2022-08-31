@@ -22,7 +22,7 @@
             </div>
             <div class="mb-3">
                 <label for="input-descricao" class="form-label">Descrição</label>
-                <input type="text" class="form-control" id="input-descricao">
+                <input type="text" name= "descricao" class="form-control" id="input-descricao">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

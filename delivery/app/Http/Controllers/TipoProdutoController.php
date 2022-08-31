@@ -28,8 +28,7 @@ class TipoProdutoController extends Controller
      */
     public function create()
     {
-        $tipoProduto = new TipoProduto();
-        return view('#');
+        return view('TipoProduto\create');
     }
 
     /**
@@ -40,10 +39,10 @@ class TipoProdutoController extends Controller
      */
     public function store(Request $request)
     {
-
         $tipoProduto = new TipoProduto();
-        print_r($tipoProduto);
-        return view('TipoProduto\index');
+        $tipoProduto->descricao = $request->descricao;
+        $tipoProduto->save();
+        return $this->index();
     }
 
     /**
