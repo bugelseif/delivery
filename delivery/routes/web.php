@@ -21,10 +21,11 @@ Route::get('/', function () {
 
 Route::get('tipoproduto', "App\Http\Controllers\TipoProdutoController@index");
 Route::get('tipoproduto/create', "App\Http\Controllers\TipoProdutoController@create");
-
-
 Route::post('tipoproduto', "App\Http\Controllers\TipoProdutoController@store");
 
+Route::get('produto', "App\Http\Controllers\ProdutoController@index");
+Route::get('produto/create', "App\Http\Controllers\ProdutoController@create");
+Route::post('produto', "App\Http\Controllers\ProdutoController@store");
 
 // Comando para definir de forma automática todas as rotas criados pelo --resource
 //Route::resource('tipoproduto', "App\Http\Controllers\TipoProdutoController");

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Produto;
+use DB;
+
 
 class ProdutoController extends Controller
 {
@@ -13,7 +16,9 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+        $produtos = new Produto();
+        $produtos = DB::select("SELECT * FROM PRODUTOS");
+        return view('Produto\index')->with('produtos', $produtos);
     }
 
     /**
@@ -23,7 +28,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Produto\create');
     }
 
     /**
@@ -34,7 +39,14 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $produto = new Produto();
+        $produto->nome = $request->nome;
+        $produto->preco = $request->preco;
+        $produto->Tipo_Produtos_id = $request->Tipo_Produtos_id;
+        $produto->ingredientes = $request->ingredientes;
+        $produto->urlImage = $request->urlImage;
+        $produto->save();
+        return $this->index();
     }
 
     /**
