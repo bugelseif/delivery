@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TipoProduto;
-use App\Models\Produto;
 use DB;
 
 class TipoProdutoController extends Controller
