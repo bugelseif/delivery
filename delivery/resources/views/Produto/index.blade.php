@@ -13,8 +13,8 @@
 </head>
 <body>
     <div class="container">
-        <a class="btn btn-primary" href="produto/create">Criar Produto</a>
-        <a class="btn btn-primary" href="#">Voltar</a>
+        <a class="btn btn-primary border" href="produto/create">Criar Produto</a>
+        <a class="btn btn-primary border" href="#">Voltar</a>
 
         <table class="table table-dark table-striped">
             <thead>
@@ -25,6 +25,7 @@
                 <th scope="col">ID_TIPO</th>
                 <th scope="col">Ingredientes</th>
                 <th scope="col">Imagem</th>
+                <th scope="col">Ação</th>
               </tr>
             </thead>
             <tbody>
