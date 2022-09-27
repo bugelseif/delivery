@@ -27,6 +27,8 @@ Route::get('produto', "App\Http\Controllers\ProdutoController@index")->name("pro
 Route::get('produto/create', "App\Http\Controllers\ProdutoController@create")->name("produto.create");
 Route::post('produto', "App\Http\Controllers\ProdutoController@store")->name("produto.store");
 Route::get('produto/{id}', "App\Http\Controllers\ProdutoController@show")->name("produto.show");
+Route::get('produto/{id}/edit', "App\Http\Controllers\ProdutoController@edit")->name("produto.edit");
+Route::put('produto/{id}', "App\Http\Controllers\ProdutoController@update")->name("produto.update");
 
 // Comando para definir de forma automática todas as rotas criados pelo --resource
 //Route::resource('tipoproduto', "App\Http\Controllers\TipoProdutoController");
