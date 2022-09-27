@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <a class="btn btn-primary border" href="produto/create">Criar Produto</a>
+        <a class="btn btn-primary border" href="{{route("produto.create")}}">Criar Produto</a>
         <a class="btn btn-primary border" href="#">Voltar</a>
 
         <table class="table table-dark table-striped">
@@ -22,7 +22,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Preço</th>
-                <th scope="col">ID_TIPO</th>
+                <th scope="col">Tipo</th>
                 <th scope="col">Ingredientes</th>
                 <th scope="col">Imagem</th>
                 <th scope="col">Ação</th>
@@ -34,7 +34,7 @@
                     <th scope="row">{{$produto->id}}</th>
                     <td>{{$produto->nome}}</td>
                     <td>{{$produto->preco}}</td>
-                    <td>{{$produto->Tipo_Produtos_id}}</td>
+                    <td>{{$produto->descricao}}</td>
                     <td>{{$produto->ingredientes}}</td>
                     <td>{{$produto->urlImage}}</td>
                     <td>

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
-use DB;
+use Illuminate\Support\Facades\DB;
+use App\Models\TipoProduto;
 
 
 class ProdutoController extends Controller
@@ -16,9 +17,17 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = new Produto();
-        $produtos = DB::select("SELECT * FROM PRODUTOS");
-        return view('Produto\index')->with('produtos', $produtos);
+        $produtos = DB::select('SELECT Produtos.id,
+                                       Produtos.nome,
+                                       Produtos.preco,
+                                       Tipo_Produtos.descricao,
+                                       Produtos.ingredientes,
+                                       Produtos.urlImage,
+                                       Produtos.updated_at,
+                                       Produtos.created_at
+                                FROM Produtos
+                                JOIN TIPO_PRODUTOS on Produtos.Tipo_Produtos_id = Tipo_Produtos.id');
+        return view("Produto/index")->with("produtos", $produtos);
     }
 
     /**
