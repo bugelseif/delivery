@@ -38,7 +38,7 @@
                     <td>{{$produto->ingredientes}}</td>
                     <td>{{$produto->urlImage}}</td>
                     <td>
-                        <a class="btn btn-primary" href="#">Mostrar</a>
+                        <a href="{{route("produto.show", $produto->id)}}" class="btn btn-primary">Mostrar</a>
                         <a class="btn btn-secondary" href="#">Editar</a>
                         <a class="btn btn-danger" href="#">Remover</a>
                     </td>

@@ -66,7 +66,30 @@ class ProdutoController extends Controller
      */
     public function show($id)
     {
-        //
+        $produtos = DB::select("SELECT Produtos.id,
+                                       Produtos.nome,
+                                       Produtos.preco,
+                                       Produtos.Tipo_Produtos_id,
+                                       Tipo_Produtos.descricao,
+                                       Produtos.ingredientes,
+                                       Produtos.urlImage,
+                                       Produtos.updated_at,
+                                       Produtos.created_at
+                                FROM Produtos
+                                JOIN TIPO_PRODUTOS on Produtos.Tipo_Produtos_id = Tipo_Produtos.id
+                                WHERE Produtos.id = ?", [$id]);
+        // O DB SELECT sempre retorna um array [obj], [obj, obj, ....] ou []
+
+        //$produto = Produto::find($id); // Retorna um objeto ou null
+        //dd($produto);
+
+        // Mando carregar a view show de Produto,
+        // criando dentro dela um objeto chamado "produto"
+        // com o conteúdo de $produto que está no controlador
+        if(count($produtos) > 0)
+            return view("Produto/show")->with("produto", $produtos[0]);
+        // TODO: Implementar mensagens de erro.
+        echo "Produto não encontrado";
     }
 
     /**
