@@ -114,6 +114,13 @@ class TipoProdutoController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $tipoproduto = TipoProduto::find($id);
+
+        if( isset($tipoproduto) ) {
+            $tipoproduto->delete();
+            return \Redirect::route('tipoproduto.index');
+        }
+        else{
+            echo "tipoProduto não encontrado";
+        }    }
 }
