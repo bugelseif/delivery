@@ -73,7 +73,17 @@ class TipoProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tipoproduto = TipoProduto::find($id); // retorna um obj ou null
+        // Pergunto se o obj é válido ou null
+        if( isset($tipoproduto) ){
+            // Array com todos os TipoProdutos no BD
+            // $tipoProdutos = TipoProduto::all();
+            return view("TipoProduto/edit")
+                        // ->with("produto", $produto)
+                        ->with("tipoproduto", $tipoproduto);
+        }
+        // #TODO implementar tratamento de exceptions
+        echo "Produto não encontrado";
     }
 
     /**
@@ -85,7 +95,15 @@ class TipoProdutoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tipoproduto = TipoProduto::find($id);
+
+        if( isset($tipoproduto) ){
+            $tipoproduto->descricao = $request->descricao;
+            $tipoproduto->update();
+            return $this->index();
+        }
+        // #TODO implementar tratamento de exceptions
+        echo "Produto não encontrado";
     }
 
     /**

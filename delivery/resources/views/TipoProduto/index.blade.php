@@ -25,13 +25,13 @@
               </tr>
             </thead>
             <tbody>
-                @foreach ($tipoProdutos as $produto)
+                @foreach ($tipoProdutos as $tipoproduto)
                 <tr>
-                    <th scope="row">{{$produto->id}}</th>
-                    <td>{{$produto->descricao}}</td>
+                    <th scope="row">{{$tipoproduto->id}}</th>
+                    <td>{{$tipoproduto->descricao}}</td>
                     <td>
-                        <a class="btn btn-primary" href="{{route("tipoproduto.show", $produto->id)}}">Mostrar</a>
-                        <a class="btn btn-secondary" href="#">Editar</a>
+                        <a class="btn btn-primary" href="{{route("tipoproduto.show", $tipoproduto->id)}}">Mostrar</a>
+                        <a class="btn btn-secondary" href="{{route("tipoproduto.edit", $tipoproduto->id)}}">Editar</a>
                         <a class="btn btn-danger" href="#">Remover</a>
                     </td>
                 </tr>
