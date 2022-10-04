@@ -19,9 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('tipoproduto', "App\Http\Controllers\TipoProdutoController@index");
-Route::get('tipoproduto/create', "App\Http\Controllers\TipoProdutoController@create");
-Route::post('tipoproduto', "App\Http\Controllers\TipoProdutoController@store");
+Route::get('tipoproduto', "App\Http\Controllers\TipoProdutoController@index")->name("tipoproduto.index");
+Route::get('tipoproduto/create', "App\Http\Controllers\TipoProdutoController@create")->name("tipoproduto.create");
+Route::post('tipoproduto', "App\Http\Controllers\TipoProdutoController@store")->name("tipoproduto.store");
+Route::get('tipoproduto/{id}', "App\Http\Controllers\TipoProdutoController@show")->name("tipoproduto.show");
+
 
 Route::get('produto', "App\Http\Controllers\ProdutoController@index")->name("produto.index");
 Route::get('produto/create', "App\Http\Controllers\ProdutoController@create")->name("produto.create");
